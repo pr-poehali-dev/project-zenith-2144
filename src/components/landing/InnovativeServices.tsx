@@ -48,19 +48,19 @@ const products = [
 ]
 
 const mockupColors = {
-  milk: { bg: "rgba(232, 240, 228, 0.6)", accent: "var(--eco-green)" },
-  yogurt: { bg: "rgba(240, 233, 220, 0.6)", accent: "var(--eco-brown)" },
-  urbech: { bg: "rgba(225, 210, 185, 0.5)", accent: "var(--eco-brown)" },
-  bread: { bg: "rgba(235, 220, 195, 0.6)", accent: "var(--eco-brown)" },
-  grains: { bg: "rgba(232, 240, 228, 0.6)", accent: "var(--eco-green)" },
-  oils: { bg: "rgba(240, 233, 220, 0.6)", accent: "var(--eco-green)" },
+  milk: { bg: "#d0e8c8", accent: "var(--eco-green)" },
+  yogurt: { bg: "#e8d8b8", accent: "var(--eco-brown)" },
+  urbech: { bg: "#dcc8a0", accent: "var(--eco-brown)" },
+  bread: { bg: "#e0cca8", accent: "var(--eco-brown)" },
+  grains: { bg: "#cce0c0", accent: "var(--eco-green)" },
+  oils: { bg: "#e4d0a8", accent: "var(--eco-green)" },
 }
 
 export default function InnovativeServices() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="products" className="py-24 relative" style={{ backgroundColor: "rgba(248, 244, 237, 0.5)" }}>
+    <section id="products" className="py-24 relative" style={{ backgroundColor: "#f0e4cc" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export default function InnovativeServices() {
                   onHoverStart={() => setHoveredIndex(index)}
                   onHoverEnd={() => setHoveredIndex(null)}
                   className="rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 border"
-                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                  style={{ backgroundColor: "#faf3e6", borderColor: "rgba(61, 122, 50, 0.35)" }}
                 >
                   <div className="aspect-video rounded-lg mb-6 overflow-hidden relative border flex items-center justify-center"
                     style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
@@ -105,11 +105,11 @@ export default function InnovativeServices() {
                     </motion.div>
                   </div>
                   <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
-                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)", }}>{product.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {product.tags.map((tag) => (
                       <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium border"
-                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        style={{ backgroundColor: "rgba(61, 122, 50, 0.12)", borderColor: "rgba(61, 122, 50, 0.45)", color: "var(--eco-green)" }}>
                         {tag}
                       </span>
                     ))}
@@ -133,7 +133,7 @@ export default function InnovativeServices() {
                   onHoverStart={() => setHoveredIndex(index + 2)}
                   onHoverEnd={() => setHoveredIndex(null)}
                   className="rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 border"
-                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                  style={{ backgroundColor: "#faf3e6", borderColor: "rgba(61, 122, 50, 0.35)" }}
                 >
                   <div className="aspect-square rounded-lg mb-4 flex items-center justify-center border"
                     style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
@@ -146,11 +146,11 @@ export default function InnovativeServices() {
                     </motion.div>
                   </div>
                   <h3 className="text-xl font-bold mb-2" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--eco-brown)", }}>{product.description}</p>
                   <div className="flex flex-wrap gap-1">
                     {product.tags.map((tag) => (
                       <span key={tag} className="px-2 py-0.5 rounded-full text-xs font-medium border"
-                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        style={{ backgroundColor: "rgba(61, 122, 50, 0.12)", borderColor: "rgba(61, 122, 50, 0.45)", color: "var(--eco-green)" }}>
                         {tag}
                       </span>
                     ))}
@@ -173,18 +173,18 @@ export default function InnovativeServices() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                   className="rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 border"
-                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                  style={{ backgroundColor: "#faf3e6", borderColor: "rgba(61, 122, 50, 0.35)" }}
                 >
                   <div className="aspect-video rounded-lg mb-6 overflow-hidden relative border flex items-center justify-center"
-                    style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
+                    style={{ backgroundColor: colors.bg, borderColor: "rgba(61, 122, 50, 0.2)" }}>
                     <span className="text-7xl">{product.emoji}</span>
                   </div>
                   <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
-                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)" }}>{product.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {product.tags.map((tag) => (
                       <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium border"
-                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        style={{ backgroundColor: "rgba(61, 122, 50, 0.12)", borderColor: "rgba(61, 122, 50, 0.45)", color: "var(--eco-green)" }}>
                         {tag}
                       </span>
                     ))}
@@ -200,7 +200,7 @@ export default function InnovativeServices() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="rounded-2xl p-8 flex flex-col justify-between border"
-              style={{ backgroundColor: "rgba(122, 158, 110, 0.12)", borderColor: "rgba(122, 158, 110, 0.35)" }}
+              style={{ backgroundColor: "rgba(61, 122, 50, 0.12)", borderColor: "rgba(61, 122, 50, 0.5)" }}
             >
               <div>
                 <div className="text-5xl mb-4">🌱</div>

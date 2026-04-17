@@ -49,7 +49,7 @@ export default function ROICalculatorHome() {
   const savings = total - finalTotal
 
   return (
-    <section id="values" className="py-24 relative" style={{ backgroundColor: "rgba(232, 240, 228, 0.25)" }}>
+    <section id="values" className="py-24 relative" style={{ backgroundColor: "#deecd6" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,13 +61,13 @@ export default function ROICalculatorHome() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--eco-text)" }}>
             Составьте корзину
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)" }}>
             Выберите подходящий набор и рассчитайте стоимость подписки — чем дольше, тем выгоднее
           </p>
         </motion.div>
 
         <div className="rounded-3xl p-8 backdrop-blur-sm relative overflow-hidden border"
-          style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.35)" }}>
+          style={{ backgroundColor: "#faf3e6", borderColor: "rgba(61, 122, 50, 0.4)" }}>
           <motion.div
             className="absolute inset-0 opacity-30"
             animate={{

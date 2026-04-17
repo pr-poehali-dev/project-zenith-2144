@@ -16,9 +16,9 @@ export default function AnimatedFooter() {
   }
 
   return (
-    <footer id="contact" className="relative border-t" style={{ backgroundColor: "rgba(240, 233, 220, 0.5)", borderColor: "rgba(168, 196, 154, 0.3)" }}>
+    <footer id="contact" className="relative border-t" style={{ backgroundColor: "#e8d8b8", borderColor: "rgba(61, 122, 50, 0.4)" }}>
       {/* Newsletter Section */}
-      <div className="relative z-10 border-b" style={{ borderColor: "rgba(168, 196, 154, 0.2)" }}>
+      <div className="relative z-10 border-b" style={{ borderColor: "rgba(61, 122, 50, 0.25)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

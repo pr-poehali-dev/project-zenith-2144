@@ -8,10 +8,10 @@ const steps = [
     description: "Работаем только с проверенными органическими фермами. Каждый поставщик проходит строгую проверку состава и методов выращивания.",
     icon: <Sprout className="w-8 h-8" />,
     mockup: "farm",
-    gradient: "from-green-50 to-green-100/50",
-    iconBg: "rgba(168, 196, 154, 0.3)",
+    gradient: "from-green-100 to-green-50",
+    iconBg: "rgba(61, 122, 50, 0.2)",
     iconColor: "var(--eco-green)",
-    accent: "rgba(122, 158, 110, 0.4)",
+    accent: "rgba(61, 122, 50, 0.45)",
   },
   {
     number: "02",
@@ -19,10 +19,10 @@ const steps = [
     description: "Каждая партия проверяется на состав, свежесть и отсутствие пестицидов. Никаких консервантов, усилителей вкуса и ГМО.",
     icon: <FlaskConical className="w-8 h-8" />,
     mockup: "quality",
-    gradient: "from-amber-50 to-amber-100/40",
-    iconBg: "rgba(210, 195, 170, 0.4)",
+    gradient: "from-amber-100 to-orange-50",
+    iconBg: "rgba(160, 100, 30, 0.2)",
     iconColor: "var(--eco-brown)",
-    accent: "rgba(180, 155, 120, 0.4)",
+    accent: "rgba(160, 100, 30, 0.45)",
   },
   {
     number: "03",
@@ -30,16 +30,16 @@ const steps = [
     description: "Упаковываем в переработанные материалы и доставляем в термосумках. Минимальный углеродный след от двери фермы до вашего стола.",
     icon: <Truck className="w-8 h-8" />,
     mockup: "delivery",
-    gradient: "from-green-50 to-emerald-100/40",
-    iconBg: "rgba(168, 196, 154, 0.3)",
+    gradient: "from-emerald-100 to-green-50",
+    iconBg: "rgba(61, 122, 50, 0.2)",
     iconColor: "var(--eco-green)",
-    accent: "rgba(122, 158, 110, 0.4)",
+    accent: "rgba(61, 122, 50, 0.45)",
   },
 ]
 
 export default function HowWeWork() {
   return (
-    <section id="about" className="py-24 relative" style={{ backgroundColor: "rgba(240, 233, 220, 0.3)" }}>
+    <section id="about" className="py-24 relative" style={{ backgroundColor: "#e8dcc8" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function HowWeWork() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--eco-text)" }}>
             От поля — до стола
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)" }}>
             Прозрачный путь каждого продукта: мы контролируем каждый шаг, чтобы вы получали только лучшее.
           </p>
         </motion.div>

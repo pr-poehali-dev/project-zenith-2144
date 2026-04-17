@@ -18,13 +18,13 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(232, 240, 228, 0.6) 0%, rgba(248, 244, 237, 0.4) 50%, rgba(240, 233, 220, 0.6) 100%)",
+            background: "linear-gradient(135deg, rgba(180, 220, 160, 0.55) 0%, rgba(242, 232, 213, 0.6) 50%, rgba(210, 175, 120, 0.45) 100%)",
           }}
         />
         {/* Decorative leaf patterns */}
-        <div className="absolute top-20 right-10 text-8xl opacity-10 select-none">🌿</div>
-        <div className="absolute bottom-32 left-10 text-6xl opacity-8 select-none">🍃</div>
-        <div className="absolute top-1/2 right-1/4 text-5xl opacity-6 select-none">✿</div>
+        <div className="absolute top-20 right-10 text-8xl opacity-25 select-none">🌿</div>
+        <div className="absolute bottom-32 left-10 text-6xl opacity-20 select-none">🍃</div>
+        <div className="absolute top-1/2 right-1/4 text-5xl opacity-15 select-none">✿</div>
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,8 +42,8 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium backdrop-blur-sm border"
                 style={{
-                  backgroundColor: "rgba(168, 196, 154, 0.2)",
-                  borderColor: "rgba(122, 158, 110, 0.4)",
+                  backgroundColor: "rgba(100, 180, 80, 0.18)",
+                  borderColor: "rgba(61, 122, 50, 0.55)",
                   color: "var(--eco-green)",
                 }}
               >

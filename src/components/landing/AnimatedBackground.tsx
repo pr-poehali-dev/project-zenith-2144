@@ -19,11 +19,11 @@ export default function AnimatedBackground() {
     window.addEventListener("resize", resizeCanvas)
 
     const orbs = [
-      { x: 0, y: 0, radius: 500, color: "168, 196, 154", speed: 0.3, angle: 0, offsetY: 0 },
-      { x: 0, y: 0, radius: 400, color: "210, 195, 170", speed: 0.2, angle: Math.PI, offsetY: 300 },
-      { x: 0, y: 0, radius: 350, color: "140, 180, 120", speed: 0.25, angle: Math.PI / 2, offsetY: 600 },
-      { x: 0, y: 0, radius: 320, color: "230, 215, 190", speed: 0.35, angle: Math.PI * 1.5, offsetY: 900 },
-      { x: 0, y: 0, radius: 380, color: "180, 210, 160", speed: 0.28, angle: Math.PI * 0.7, offsetY: 1200 },
+      { x: 0, y: 0, radius: 500, color: "100, 180, 70", speed: 0.3, angle: 0, offsetY: 0 },
+      { x: 0, y: 0, radius: 400, color: "190, 140, 60", speed: 0.2, angle: Math.PI, offsetY: 300 },
+      { x: 0, y: 0, radius: 350, color: "70, 155, 50", speed: 0.25, angle: Math.PI / 2, offsetY: 600 },
+      { x: 0, y: 0, radius: 320, color: "210, 165, 80", speed: 0.35, angle: Math.PI * 1.5, offsetY: 900 },
+      { x: 0, y: 0, radius: 380, color: "120, 195, 90", speed: 0.28, angle: Math.PI * 0.7, offsetY: 1200 },
     ]
 
     let animationId: number

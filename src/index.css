@@ -37,13 +37,13 @@
     --sidebar-ring: 100 28% 38%;
 
     /* Eco custom */
-    --eco-beige: #f8f4ed;
-    --eco-beige-dark: #f0e9dc;
-    --eco-green: #7a9e6e;
-    --eco-green-light: #a8c49a;
-    --eco-green-pale: #e8f0e4;
-    --eco-brown: #6b5340;
-    --eco-text: #3d3228;
+    --eco-beige: #f2e8d5;
+    --eco-beige-dark: #e6d4b8;
+    --eco-green: #3d7a32;
+    --eco-green-light: #5ea84f;
+    --eco-green-pale: #c8e8c0;
+    --eco-brown: #5a3010;
+    --eco-text: #1e1208;
   }
 }
 
