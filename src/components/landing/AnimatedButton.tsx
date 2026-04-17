@@ -64,18 +64,18 @@ export default function AnimatedButton({
       whileHover={disabled ? undefined : "hover"}
       initial="initial"
     >
-      {/* Rainbow border on hover */}
+      {/* Soft eco border on hover */}
       <motion.div
-        className="absolute -inset-0.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+        className="absolute -inset-0.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: "linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3)",
+          background: "linear-gradient(45deg, #7a9e6e, #a8c49a, #d2c3aa, #7a9e6e)",
           backgroundSize: "400% 400%",
         }}
         animate={{
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
         }}
         transition={{
-          duration: 2,
+          duration: 3,
           repeat: Infinity,
           ease: "linear",
         }}

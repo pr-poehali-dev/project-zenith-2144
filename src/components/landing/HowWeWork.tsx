@@ -1,36 +1,45 @@
 import { motion } from "framer-motion"
-import { Search, Lightbulb, Rocket } from "lucide-react"
+import { Sprout, FlaskConical, Truck } from "lucide-react"
 
 const steps = [
   {
     number: "01",
-    title: "Анализ и стратегия",
-    description: "Глубоко погружаемся в ваши задачи, исследуем идеи и формируем стратегию для долгосрочного успеха.",
-    icon: <Search className="w-8 h-8" />,
-    mockup: "discovery",
-    gradient: "from-blue-500/20 to-blue-600/10",
+    title: "Отбор фермеров",
+    description: "Работаем только с проверенными органическими фермами. Каждый поставщик проходит строгую проверку состава и методов выращивания.",
+    icon: <Sprout className="w-8 h-8" />,
+    mockup: "farm",
+    gradient: "from-green-50 to-green-100/50",
+    iconBg: "rgba(168, 196, 154, 0.3)",
+    iconColor: "var(--eco-green)",
+    accent: "rgba(122, 158, 110, 0.4)",
   },
   {
     number: "02",
-    title: "Разработка и тесты",
-    description: "Создаем решения под ваши цели и тщательно тестируем их для максимальной надежности.",
-    icon: <Lightbulb className="w-8 h-8" />,
-    mockup: "development",
-    gradient: "from-purple-500/20 to-purple-600/10",
+    title: "Контроль качества",
+    description: "Каждая партия проверяется на состав, свежесть и отсутствие пестицидов. Никаких консервантов, усилителей вкуса и ГМО.",
+    icon: <FlaskConical className="w-8 h-8" />,
+    mockup: "quality",
+    gradient: "from-amber-50 to-amber-100/40",
+    iconBg: "rgba(210, 195, 170, 0.4)",
+    iconColor: "var(--eco-brown)",
+    accent: "rgba(180, 155, 120, 0.4)",
   },
   {
     number: "03",
-    title: "Запуск и поддержка",
-    description: "Бесшовно внедряем решение и обеспечиваем его стабильную работу с постоянной поддержкой.",
-    icon: <Rocket className="w-8 h-8" />,
-    mockup: "launch",
-    gradient: "from-green-500/20 to-green-600/10",
+    title: "Доставка с заботой",
+    description: "Упаковываем в переработанные материалы и доставляем в термосумках. Минимальный углеродный след от двери фермы до вашего стола.",
+    icon: <Truck className="w-8 h-8" />,
+    mockup: "delivery",
+    gradient: "from-green-50 to-emerald-100/40",
+    iconBg: "rgba(168, 196, 154, 0.3)",
+    iconColor: "var(--eco-green)",
+    accent: "rgba(122, 158, 110, 0.4)",
   },
 ]
 
 export default function HowWeWork() {
   return (
-    <section className="py-24 bg-black relative">
+    <section id="about" className="py-24 relative" style={{ backgroundColor: "rgba(240, 233, 220, 0.3)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,9 +48,11 @@ export default function HowWeWork() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Как мы работаем</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Простой и эффективный подход к развитию вашего бренда на высшем уровне.
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--eco-text)" }}>
+            От поля — до стола
+          </h2>
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+            Прозрачный путь каждого продукта: мы контролируем каждый шаг, чтобы вы получали только лучшее.
           </p>
         </motion.div>
 
@@ -53,119 +64,102 @@ export default function HowWeWork() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className={`bg-gradient-to-br ${step.gradient} border border-gray-800/50 rounded-3xl p-8 backdrop-blur-sm hover:border-gray-700/50 transition-all duration-300 group`}
+              whileHover={{ y: -8 }}
+              className={`bg-gradient-to-br ${step.gradient} rounded-3xl p-8 backdrop-blur-sm transition-all duration-300 group border`}
+              style={{ borderColor: step.accent }}
             >
-              {/* Mockup Area */}
-              <div className="aspect-video bg-gray-900 rounded-2xl mb-6 overflow-hidden relative border border-gray-800">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-                  {/* Discovery Mockup */}
-                  {step.mockup === "discovery" && (
+              {/* Illustrative area */}
+              <div className="aspect-video rounded-2xl mb-6 overflow-hidden relative border" style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: step.accent }}>
+                <div className="absolute inset-0 p-4 flex items-center justify-center">
+
+                  {step.mockup === "farm" && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 1, delay: index * 0.3 }}
-                      className="w-full h-full flex items-center justify-center"
+                      className="w-full max-w-[200px] space-y-3"
                     >
-                      <div className="w-full max-w-[200px] space-y-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                            <div className="w-3 h-3 bg-blue-500 rounded"></div>
+                      <div className="flex justify-center space-x-3 text-3xl">
+                        <motion.span animate={{ y: [0, -4, 0] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }}>🌾</motion.span>
+                        <motion.span animate={{ y: [0, -4, 0] }} transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}>🥛</motion.span>
+                        <motion.span animate={{ y: [0, -4, 0] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}>🌿</motion.span>
+                      </div>
+                      <div className="space-y-2">
+                        {["Органические фермы", "Проверенные поставщики", "Без химии"].map((t) => (
+                          <div key={t} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--eco-green)" }} />
+                            <div className="text-xs" style={{ color: "var(--eco-text)" }}>{t}</div>
                           </div>
-                          <div className="flex-1 space-y-1">
-                            <div className="bg-gray-700 h-2 w-full rounded"></div>
-                            <div className="bg-gray-700 h-2 w-3/4 rounded"></div>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <div className="bg-gray-700 h-12 rounded-lg"></div>
-                          <div className="bg-gray-700 h-12 rounded-lg"></div>
-                        </div>
-                        <div className="bg-gray-700 h-8 w-full rounded"></div>
+                        ))}
                       </div>
                     </motion.div>
                   )}
 
-                  {/* Development Mockup */}
-                  {step.mockup === "development" && (
+                  {step.mockup === "quality" && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 1, delay: index * 0.3 }}
-                      className="w-full h-full flex items-center justify-center"
+                      className="w-full max-w-[200px] space-y-3"
                     >
-                      <div className="w-full max-w-[200px] space-y-3">
-                        <div className="bg-gray-800 rounded-lg p-3">
-                          <div className="flex items-center space-x-2 mb-2">
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="flex justify-center text-3xl mb-2">🔬</div>
+                      <div className="space-y-2">
+                        {[
+                          { label: "Без пестицидов", ok: true },
+                          { label: "Без ГМО", ok: true },
+                          { label: "Без консервантов", ok: true },
+                          { label: "Натуральный состав", ok: true },
+                        ].map((item) => (
+                          <div key={item.label} className="flex items-center space-x-2">
+                            <div className="w-3 h-3 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--eco-green)" }}>
+                              <span className="text-white text-xs">✓</span>
+                            </div>
+                            <div className="text-xs" style={{ color: "var(--eco-text)" }}>{item.label}</div>
                           </div>
-                          <div className="space-y-2">
-                            <div className="bg-gray-700 h-2 w-full rounded"></div>
-                            <div className="bg-gray-700 h-2 w-2/3 rounded"></div>
-                            <div className="bg-purple-500 h-2 w-1/2 rounded"></div>
-                          </div>
-                        </div>
-                        <div className="flex space-x-2">
-                          <div className="bg-gray-700 h-8 flex-1 rounded"></div>
-                          <div className="bg-purple-500 h-8 w-16 rounded"></div>
-                        </div>
+                        ))}
                       </div>
                     </motion.div>
                   )}
 
-                  {/* Launch Mockup */}
-                  {step.mockup === "launch" && (
+                  {step.mockup === "delivery" && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 1, delay: index * 0.3 }}
-                      className="w-full h-full flex items-center justify-center"
+                      className="w-full max-w-[200px] space-y-3"
                     >
-                      <div className="w-full max-w-[200px] space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="text-xs text-gray-400">Статус</div>
-                          <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                            className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full"
-                          ></motion.div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Безопасность</div>
+                      <div className="flex justify-center space-x-2 text-2xl mb-2">
+                        <motion.span animate={{ x: [0, 8, 0] }} transition={{ duration: 2.5, repeat: Infinity }}>📦</motion.span>
+                        <span>→</span>
+                        <span>🏠</span>
+                      </div>
+                      <div className="space-y-2">
+                        {["Эко-упаковка", "Термосумки", "CO₂ нейтральность"].map((t) => (
+                          <div key={t} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--eco-green)" }} />
+                            <div className="text-xs" style={{ color: "var(--eco-text)" }}>{t}</div>
                           </div>
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Эффективность</div>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Скорость</div>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                            <div className="text-xs text-gray-300">Обновление...</div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </motion.div>
                   )}
+
                 </div>
               </div>
 
-              {/* Content */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="text-4xl font-bold text-gray-600">{step.number}</div>
-                  <div className="text-blue-400">{step.icon}</div>
+                  <div className="text-4xl font-bold" style={{ color: step.accent, opacity: 0.8 }}>{step.number}</div>
+                  <div className="p-2 rounded-xl" style={{ backgroundColor: step.iconBg, color: step.iconColor }}>
+                    {step.icon}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-bold transition-colors" style={{ color: "var(--eco-text)" }}>
                   {step.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                <p className="leading-relaxed" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+                  {step.description}
+                </p>
               </div>
             </motion.div>
           ))}

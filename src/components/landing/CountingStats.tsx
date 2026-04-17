@@ -49,51 +49,15 @@ export default function CountingStats({ stats }: CountingStatsProps) {
       {stats.map((stat, index) => (
         <div key={index} className="text-center lg:text-left relative">
           <motion.div
-            className="text-3xl font-bold text-white mb-1 relative"
-            style={{
-              textShadow: "0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6)",
-            }}
+            className="text-3xl font-bold mb-1 relative"
+            style={{ color: "var(--eco-green)" }}
           >
-            <motion.span
-              animate={
-                isInView
-                  ? {
-                      textShadow: [
-                        "0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6)",
-                        "0 0 40px rgba(147, 51, 234, 1), 0 0 80px rgba(236, 72, 153, 0.8)",
-                        "0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6)",
-                      ],
-                      scale: [1, 1.05, 1],
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
+            <span>
               {counts[index]}
               {stat.suffix}
-            </motion.span>
-            <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-lg blur-xl"
-              animate={
-                isInView
-                  ? {
-                      opacity: [0.4, 0.8, 0.4],
-                      scale: [1, 1.2, 1],
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+            </span>
           </motion.div>
-          <div className="text-sm text-gray-400">{stat.label}</div>
+          <div className="text-sm" style={{ color: "var(--eco-brown)", opacity: 0.7 }}>{stat.label}</div>
         </div>
       ))}
     </motion.div>

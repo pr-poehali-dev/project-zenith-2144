@@ -1,56 +1,66 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Instagram, Youtube, Shield, CheckCircle, DollarSign } from "lucide-react"
 import AnimatedButton from "./AnimatedButton"
 
-const services = [
+const products = [
   {
-    title: "Таргетированная реклама",
-    description:
-      "Стимулируем рост и вовлечение через data-driven рекламу в соцсетях с таргетированными стратегиями для развития бренда.",
-    mockup: "social",
+    title: "Альтернативное молоко",
+    description: "Овсяное, миндальное, кокосовое, рисовое — без добавленного сахара и консервантов. Идеально для кофе, каш и выпечки.",
+    emoji: "🥛",
+    mockup: "milk",
+    tags: ["Без лактозы", "Веган", "Без сахара"],
   },
   {
-    title: "Google Ads",
-    description:
-      "Достигаем клиентов в нужный момент с Google Ads, привлекая трафик и продажи через таргетированную рекламу.",
-    mockup: "google-ads",
+    title: "Живые йогурты",
+    description: "Натуральные йогурты на закваске с живыми бактериями. Без крахмала, желатина и ароматизаторов — только молоко и культуры.",
+    emoji: "🫙",
+    mockup: "yogurt",
+    tags: ["Живые бактерии", "Без загустителей"],
   },
   {
-    title: "Email / SMS",
-    description: "Достигаем клиентов через таргетированный email и SMS маркетинг, стимулируя продажи и лояльность.",
-    mockup: "email",
+    title: "Урбечи и пасты",
+    description: "Сырые урбечи из семян и орехов: кунжут, лён, миндаль, кешью. Один ингредиент — максимум пользы.",
+    emoji: "🌰",
+    mockup: "urbech",
+    tags: ["Сырые", "1 ингредиент", "Без масла"],
   },
   {
-    title: "SEO",
-    description:
-      "Повышаем видимость в поисковых системах: аудит сайта, анализ ключевых слов и комплексная оптимизация.",
-    mockup: "seo",
+    title: "Хлеб и выпечка",
+    description: "Цельнозерновой хлеб на натуральной закваске, без дрожжей и улучшителей. Долгое брожение — долгая свежесть.",
+    emoji: "🍞",
+    mockup: "bread",
+    tags: ["Закваска", "Без дрожжей", "Цельнозерновой"],
   },
   {
-    title: "Аналитика",
-    description:
-      "Отслеживаем эффективность и получаем инсайты с комплексной аналитикой для принятия data-driven решений.",
-    mockup: "analytics",
+    title: "Крупы и злаки",
+    description: "Необработанные крупы, киноа, амарант, полба — органически выращенные без пестицидов в фермерских хозяйствах.",
+    emoji: "🌾",
+    mockup: "grains",
+    tags: ["Органические", "Без ГМО"],
   },
   {
-    title: "Веб-разработка",
-    description:
-      "Создаем сайты любой сложности: от лендингов до крупных порталов, с гибкими тарифами под ваши задачи.",
-    mockup: "web-dev",
-    badges: [
-      { icon: <Shield className="w-4 h-4" />, text: "SSL-защита" },
-      { icon: <DollarSign className="w-4 h-4" />, text: "Без абонплаты" },
-      { icon: <CheckCircle className="w-4 h-4" />, text: "Uptime 99.9%" },
-    ],
+    title: "Масла холодного отжима",
+    description: "Льняное, кедровое, тыквенное, оливковое Extra Virgin. Первый холодный отжим сохраняет все витамины и Омега-кислоты.",
+    emoji: "🫒",
+    mockup: "oils",
+    tags: ["Холодный отжим", "Нерафинированное", "Омега-3"],
   },
 ]
+
+const mockupColors = {
+  milk: { bg: "rgba(232, 240, 228, 0.6)", accent: "var(--eco-green)" },
+  yogurt: { bg: "rgba(240, 233, 220, 0.6)", accent: "var(--eco-brown)" },
+  urbech: { bg: "rgba(225, 210, 185, 0.5)", accent: "var(--eco-brown)" },
+  bread: { bg: "rgba(235, 220, 195, 0.6)", accent: "var(--eco-brown)" },
+  grains: { bg: "rgba(232, 240, 228, 0.6)", accent: "var(--eco-green)" },
+  oils: { bg: "rgba(240, 233, 220, 0.6)", accent: "var(--eco-green)" },
+}
 
 export default function InnovativeServices() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-24 bg-black relative">
+    <section id="products" className="py-24 relative" style={{ backgroundColor: "rgba(248, 244, 237, 0.5)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,481 +69,163 @@ export default function InnovativeServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Услуги для роста бизнеса</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Индивидуальные решения для оптимизации, инноваций и масштабирования.
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--eco-text)" }}>
+            Наши продукты
+          </h2>
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+            Каждый продукт — осознанный выбор. Чистый состав, забота о природе и настоящий вкус.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8">
-          {/* Top row - Paid Social and Google Ads */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.slice(0, 2).map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                onHoverStart={() => setHoveredIndex(index)}
-                onHoverEnd={() => setHoveredIndex(null)}
-                className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
-              >
-                <div className="aspect-video bg-gray-900 rounded-lg mb-6 overflow-hidden relative border border-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-                    {/* Paid Social Mockup */}
-                    {service.mockup === "social" && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="w-full h-full p-2"
-                      >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="flex justify-between items-center mb-3">
-                            <div className="text-xs text-gray-400">Платформы</div>
-                            <div className="flex space-x-2">
-                              <motion.div
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 0.3, delay: 0.2 }}
-                                viewport={{ once: true }}
-                                className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"
-                              >
-                                <Instagram className="w-3 h-3 text-white" />
-                              </motion.div>
-                              <motion.div
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 0.3, delay: 0.4 }}
-                                viewport={{ once: true }}
-                                className="w-5 h-5 bg-red-600 rounded-md flex items-center justify-center"
-                              >
-                                <Youtube className="w-3 h-3 text-white" />
-                              </motion.div>
-                              <motion.div
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 0.3, delay: 0.6 }}
-                                viewport={{ once: true }}
-                                className="w-5 h-5 bg-yellow-400 rounded-md flex items-center justify-center text-black text-xs"
-                              >
-                                <span role="img" aria-label="ghost">
-                                  &#128123;
-                                </span>
-                              </motion.div>
-                            </div>
-                          </div>
-                          <div className="space-y-1 mb-3">
-                            <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-blue-600"
-                              initial={{ width: "0%" }}
-                              whileInView={{ width: "85%" }}
-                              transition={{ duration: 1, delay: 0.8 }}
-                              viewport={{ once: true }}
-                            >
-                              Facebook
-                            </motion.div>
-                            <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-pink-600"
-                              initial={{ width: "0%" }}
-                              whileInView={{ width: "92%" }}
-                              transition={{ duration: 1, delay: 1 }}
-                              viewport={{ once: true }}
-                            >
-                              Instagram
-                            </motion.div>
-                            <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-black"
-                              initial={{ width: "0%" }}
-                              whileInView={{ width: "78%" }}
-                              transition={{ duration: 1, delay: 1.2 }}
-                              viewport={{ once: true }}
-                            >
-                              TikTok
-                            </motion.div>
-                            <motion.div
-                              className="text-black text-xs px-2 py-1 rounded bg-yellow-400"
-                              initial={{ width: "0%" }}
-                              whileInView={{ width: "65%" }}
-                              transition={{ duration: 1, delay: 1.4 }}
-                              viewport={{ once: true }}
-                            >
-                              Snapchat
-                            </motion.div>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <div>
-                              <div className="text-xs text-gray-400 mb-1">Рост</div>
-                              <motion.div
-                                animate={{ scale: [1, 1.1, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="text-lg font-bold text-green-400"
-                              >
-                                +23%
-                              </motion.div>
-                            </div>
-                            <div className="flex items-end space-x-1 h-8">
-                              {[4, 6, 3, 8, 5, 7].map((height, i) => (
-                                <motion.div
-                                  key={i}
-                                  initial={{ height: "4px" }}
-                                  whileInView={{ height: `${height * 4}px` }}
-                                  transition={{ duration: 0.8, delay: 1.6 + i * 0.1 }}
-                                  viewport={{ once: true }}
-                                  className="bg-blue-500 w-1 rounded-t"
-                                ></motion.div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {/* Google Ads Mockup */}
-                    {service.mockup === "google-ads" && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                        className="w-full h-full p-2"
-                      >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="flex items-center space-x-2 mb-4">
-                            <motion.div
-                              animate={{ rotate: [0, 360] }}
-                              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                              className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
-                            >
-                              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                <path
-                                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                  fill="#4285F4"
-                                />
-                                <path
-                                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                  fill="#34A853"
-                                />
-                                <path
-                                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                                  fill="#FBBC05"
-                                />
-                                <path
-                                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                  fill="#EA4335"
-                                />
-                              </svg>
-                            </motion.div>
-                            <div>
-                              <div className="text-xs text-white">Google Ads</div>
-                              <div className="text-xs text-gray-400">Панель управления</div>
-                            </div>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Показы</span>
-                              <motion.span
-                                animate={{ opacity: [0.5, 1, 0.5] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="text-green-400"
-                              >
-                                +15.2K
-                              </motion.span>
-                            </div>
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Клики</span>
-                              <motion.span
-                                animate={{ opacity: [0.5, 1, 0.5] }}
-                                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                                className="text-blue-400"
-                              >
-                                1 247
-                              </motion.span>
-                            </div>
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">CTR</span>
-                              <span className="text-gray-300">8,2%</span>
-                            </div>
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Quality Score</span>
-                              <span className="text-green-400">9/10</span>
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
+            {products.slice(0, 2).map((product, index) => {
+              const colors = mockupColors[product.mockup as keyof typeof mockupColors]
+              return (
+                <motion.div
+                  key={product.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  onHoverStart={() => setHoveredIndex(index)}
+                  onHoverEnd={() => setHoveredIndex(null)}
+                  className="rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 border"
+                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                >
+                  <div className="aspect-video rounded-lg mb-6 overflow-hidden relative border flex items-center justify-center"
+                    style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
+                    <motion.div
+                      animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                      className="text-7xl"
+                    >
+                      {product.emoji}
+                    </motion.div>
                   </div>
-                </div>
-
-                <div className="flex flex-col justify-between h-auto">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
+                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {product.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium border"
+                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </div>
 
-          {/* Middle row - Email/SMS, SEO, Analytics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.slice(2, 5).map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: (index + 2) * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
-              >
-                <div className="aspect-video bg-gray-900 rounded-lg mb-6 overflow-hidden relative border border-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-                    {/* Email/SMS Mockup */}
-                    {service.mockup === "email" && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: (index + 2) * 0.2 }}
-                        className="w-full h-full p-2"
-                      >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="space-y-2 mb-3">
-                            <motion.div
-                              animate={{ width: ["100%", "90%", "100%"] }}
-                              transition={{ duration: 3, repeat: Infinity }}
-                              className="bg-gray-700 h-2 rounded"
-                            ></motion.div>
-                            <motion.div
-                              animate={{ width: ["75%", "85%", "75%"] }}
-                              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                              className="bg-gray-700 h-2 rounded"
-                            ></motion.div>
-                          </div>
-                          <div className="space-y-1 mb-3">
-                            <div className="bg-gray-700 h-1 w-full rounded"></div>
-                            <div className="bg-gray-700 h-1 w-full rounded"></div>
-                            <div className="bg-gray-700 h-1 w-2/3 rounded"></div>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <div className="bg-gray-700 h-6 w-20 rounded"></div>
-                            <motion.div
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-blue-600 h-8 w-24 rounded text-xs flex items-center justify-center text-white cursor-pointer"
-                            >
-                              Отправить
-                            </motion.div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {/* SEO Mockup */}
-                    {service.mockup === "seo" && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: (index + 2) * 0.2 }}
-                        className="w-full h-full p-2"
-                      >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="text-xs text-gray-400 mb-2">SEO-отчет</div>
-                          <div className="grid grid-cols-2 gap-2 mb-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Трафик</div>
-                              <motion.div
-                                animate={{ width: ["60%", "80%", "60%"] }}
-                                transition={{ duration: 3, repeat: Infinity }}
-                                className="bg-gray-600 h-1 rounded mt-1"
-                              ></motion.div>
-                            </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Позиции</div>
-                              <motion.div
-                                animate={{ width: ["75%", "90%", "75%"] }}
-                                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                                className="bg-green-600 h-1 rounded mt-1"
-                              ></motion.div>
-                            </div>
-                          </div>
-                          <div className="bg-gray-700 rounded p-2">
-                            <div className="text-xs text-gray-400">Аудит сайта</div>
-                            <div className="space-y-1 mt-1">
-                              <div className="bg-gray-600 h-1 w-full rounded"></div>
-                              <div className="bg-gray-600 h-1 w-2/3 rounded"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {/* Analytics Mockup */}
-                    {service.mockup === "analytics" && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: (index + 2) * 0.2 }}
-                        className="w-full h-full p-2"
-                      >
-                        <div className="bg-gray-800 rounded-lg p-3 h-full">
-                          <div className="text-xs text-gray-400 mb-2">Показатели</div>
-                          <div className="grid grid-cols-2 gap-2 mb-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Позиция</div>
-                              <motion.div
-                                animate={{ color: ["#10b981", "#3b82f6", "#10b981"] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="text-xs font-bold mt-1"
-                              >
-                                #1
-                              </motion.div>
-                            </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Показы</div>
-                              <div className="text-xs text-white mt-1">12.5K</div>
-                            </div>
-                          </div>
-                          <div className="grid grid-cols-2 gap-2">
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Клики</div>
-                              <motion.div
-                                animate={{ scale: [1, 1.1, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="text-xs text-white mt-1"
-                              >
-                                2.1K
-                              </motion.div>
-                            </div>
-                            <div className="bg-gray-700 rounded p-2">
-                              <div className="text-xs text-gray-400">Посетители</div>
-                              <div className="text-xs text-white mt-1">1.8K</div>
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
+            {products.slice(2, 5).map((product, index) => {
+              const colors = mockupColors[product.mockup as keyof typeof mockupColors]
+              return (
+                <motion.div
+                  key={product.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  onHoverStart={() => setHoveredIndex(index + 2)}
+                  onHoverEnd={() => setHoveredIndex(null)}
+                  className="rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 border"
+                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                >
+                  <div className="aspect-square rounded-lg mb-4 flex items-center justify-center border"
+                    style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
+                    <motion.div
+                      animate={hoveredIndex === index + 2 ? { scale: 1.15, rotate: 5 } : { scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="text-5xl"
+                    >
+                      {product.emoji}
+                    </motion.div>
                   </div>
-                </div>
-
-                <div className="flex flex-col justify-between h-auto">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {product.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 rounded-full text-xs font-medium border"
+                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </div>
 
-          {/* Bottom row - Web Development (full width) */}
-          {services.slice(5).map((service) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Last product */}
+            {products.slice(5, 6).map((product, index) => {
+              const colors = mockupColors[product.mockup as keyof typeof mockupColors]
+              return (
+                <motion.div
+                  key={product.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 border"
+                  style={{ backgroundColor: "rgba(248, 244, 237, 0.7)", borderColor: "rgba(168, 196, 154, 0.3)" }}
+                >
+                  <div className="aspect-video rounded-lg mb-6 overflow-hidden relative border flex items-center justify-center"
+                    style={{ backgroundColor: colors.bg, borderColor: "rgba(168, 196, 154, 0.2)" }}>
+                    <span className="text-7xl">{product.emoji}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--eco-text)" }}>{product.title}</h3>
+                  <p className="leading-relaxed mb-4" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>{product.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {product.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium border"
+                        style={{ backgroundColor: "rgba(168, 196, 154, 0.2)", borderColor: "rgba(122, 158, 110, 0.3)", color: "var(--eco-green)" }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            })}
+
+            {/* CTA card */}
             <motion.div
-              key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-700 transition-all duration-300 group"
+              className="rounded-2xl p-8 flex flex-col justify-between border"
+              style={{ backgroundColor: "rgba(122, 158, 110, 0.12)", borderColor: "rgba(122, 158, 110, 0.35)" }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm mb-6">{service.description}</p>
-
-                    {/* Trust Badges */}
-                    {service.badges && (
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        {service.badges.map((badge, badgeIndex) => (
-                          <div
-                            key={badgeIndex}
-                            className="flex items-center space-x-2 bg-gray-800/50 px-3 py-2 rounded-lg border border-gray-700/50"
-                          >
-                            <div className="text-green-400">{badge.icon}</div>
-                            <span className="text-xs text-gray-300">{badge.text}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex justify-end items-center">
-                    <a href="#services">
-                      <AnimatedButton className="bg-white text-black hover:bg-gray-100 px-6 py-2">
-                        <span className="flex items-center">Подробнее</span>
-                      </AnimatedButton>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="md:col-span-2">
-                  <div className="aspect-[16/9] bg-gray-900 rounded-lg overflow-hidden relative border border-gray-800">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-                      {/* Web Development Mockup */}
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        className="w-full h-full"
-                      >
-                        {/* Browser Chrome */}
-                        <div className="bg-gray-700 rounded-t-lg p-2 mb-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="flex space-x-1">
-                              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            </div>
-                            <div className="bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded flex-1 text-center">
-                              www.pulsedigital.agency
-                            </div>
-                          </div>
-                        </div>
-                        {/* Website Content */}
-                        <div className="bg-gray-800 rounded-b-lg p-3 h-[calc(100%-36px)] grid grid-cols-3 gap-3">
-                          <div className="col-span-3 flex justify-between items-center mb-2">
-                            <motion.div
-                              animate={{ width: ["60px", "80px", "60px"] }}
-                              transition={{ duration: 3, repeat: Infinity }}
-                              className="bg-gray-700 h-4 rounded"
-                            ></motion.div>
-                            <div className="flex space-x-2">
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
-                              <div className="bg-gray-700 h-3 w-12 rounded"></div>
-                            </div>
-                          </div>
-                          <motion.div
-                            animate={{ opacity: [0.7, 1, 0.7] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                            className="col-span-3 h-20 bg-gray-700 rounded mb-3"
-                          ></motion.div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
-                          <div className="bg-gray-700 h-24 rounded"></div>
-                          <div className="col-span-3 grid grid-cols-4 gap-2">
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                            <div className="bg-gray-700 h-8 rounded"></div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <div className="text-5xl mb-4">🌱</div>
+                <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--eco-text)" }}>
+                  Подписка на корзину
+                </h3>
+                <p className="leading-relaxed mb-6" style={{ color: "var(--eco-brown)", opacity: 0.75 }}>
+                  Получайте персональную корзину органических продуктов еженедельно. Никакого планирования — только свежее и вкусное.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {["Индивидуальный состав", "Гибкая периодичность", "Скидка 10% на подписку"].map((item) => (
+                    <li key={item} className="flex items-center space-x-2">
+                      <span style={{ color: "var(--eco-green)" }}>✓</span>
+                      <span className="text-sm" style={{ color: "var(--eco-text)" }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+              <a href="#get-started">
+                <AnimatedButton className="w-full text-white font-semibold" style={{ backgroundColor: "var(--eco-green)" }}>
+                  Оформить подписку
+                </AnimatedButton>
+              </a>
             </motion.div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
